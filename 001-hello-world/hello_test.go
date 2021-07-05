@@ -19,17 +19,9 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("Hello without name", func(t *testing.T) {
-		got := Hello()
+		got := Hello("")
 		want := "Hello, World"
 
 		assetsCorrectMessage(t, got, want)
 	})
-
-	t.Run("Hello with many names use only first name", func(t *testing.T) {
-		got := Hello("Chris", "John")
-		want := "Hello, Chris"
-
-		assetsCorrectMessage(t, got, want)
-	})
-
 }
