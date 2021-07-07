@@ -37,3 +37,26 @@ func ExampleSumAll() {
 	fmt.Println(result)
 	// Output: [3 6 6]
 }
+
+func TestSumAllTails(t *testing.T) {
+	checkSums := func(t testing.TB, got, want []int) {
+		t.Helper()
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %v want %v", got, want)
+		}
+	}
+
+	t.Run("make the sums of tails of filled slices", func(t *testing.T) {
+		got := SumAllTails([]int{1, 2}, []int{3, 3, 1})
+		want := []int{2, 4}
+
+		checkSums(t, got, want)
+	})
+
+	t.Run("sately sum empty slices", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{})
+		want := []int{0, 0}
+
+		checkSums(t, got, want)
+	})
+}
