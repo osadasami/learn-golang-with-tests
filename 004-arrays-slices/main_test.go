@@ -60,3 +60,9 @@ func TestSumAllTails(t *testing.T) {
 		checkSums(t, got, want)
 	})
 }
+
+func ExampleSumAllTails() {
+	result := SumAllTails([]int{1, 2}, []int{3, 3, 1})
+	fmt.Println(result)
+	// Output: [2 4]
+}
