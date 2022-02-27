@@ -3,7 +3,6 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
-
 	assetsCorrectMessage := func(t testing.TB, got, want string) {
 		t.Helper()
 		if got != want {
